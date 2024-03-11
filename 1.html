@@ -1,0 +1,46 @@
+<!-- Write a Javascript program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following. (5 marks)
+
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D 
+Percentage >= 50% : Grade E
+Percentage >= 40% : Grade F -->
+
+<script type="text/Javascript">
+    let physics = parseInt(prompt("Enter a physics marks"));
+    let chemistry = parseInt(prompt("Enter a chemistry marks"));
+    let biology = parseInt(prompt("Enter a biology marks"));
+    let maths = parseInt(prompt("Enter a maths marks"));
+    let computer = parseInt(prompt("Enter a computer marks"));
+
+    let total =  physics+chemistry+biology+maths+computer;
+
+    document.write(`<h3>Total marks is :${ total}</h3>`);
+
+    let percentage = total * 100 / 500;
+
+    document.write(`<h3>percentage is :${ percentage}</h3>`);
+
+    function calculateGrade(percentage) {
+        if (percentage >= 90) {
+            return 'A';
+        } else if (percentage >= 80) {
+            return 'B';
+        } else if (percentage >= 70) {
+            return 'C';
+        } else if (percentage >= 60) {
+            return 'D';
+        } else if (percentage >= 50) {
+            return 'E';
+        } else if (percentage >= 40) {
+            return 'F';
+        } else {
+            return 'Fail';
+        }
+    }
+
+    let grade = calculateGrade(percentage);
+    document.write(`<h3>Grade: ${grade}</h3>`);
+
+</script>

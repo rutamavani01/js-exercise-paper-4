@@ -1,0 +1,19 @@
+<!-- Write javascript program to print 1 to n number and find even number sum using while loop. -->
+
+<script type="text/javascript">
+    var n = parseInt(prompt("Enter a number"));
+
+    var i = 1, sum = 0;
+
+    while (i <= n) {
+        document.write(i+"&nbsp;");
+        
+        if (i % 2 == 1) {
+            sum = sum += i;
+        }
+        i++;
+    }
+    document.write('<br/><br/>')
+
+    document.write("Even numbers sum is:  " + sum);
+</script>

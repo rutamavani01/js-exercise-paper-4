@@ -1,0 +1,105 @@
+<!-- Write a javascript to create form validation below image. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+    body {
+        background: rgb(30, 30, 40);
+    }
+
+    form {
+        max-width: 420px;
+        margin: 50px auto;
+    }
+
+    .feedback-input {
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 5px;
+        line-height: 22px;
+        background-color: transparent;
+        border: 2px solid #CC6666;
+        transition: all 0.3s;
+        padding: 13px;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: 0;
+    }
+
+    .feedback-input:focus {
+        border: 2px solid #CC4949;
+    }
+
+    textarea {
+        height: 150px;
+        line-height: 150%;
+        resize: vertical;
+    }
+
+    [type="button"] {
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        width: 100%;
+        background: #CC6666;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all 0.3s;
+        margin-top: -4px;
+        font-weight: 700;
+    }
+
+    [type="submit"]:hover {
+        background: #CC4949;
+    }
+</style>
+
+<body>
+    <form>
+        <input name="blog" type="text" class="feedback-input" id="blog" placeholder="Enter Blog title" />
+        <textarea name="body" class="feedback-input" id="body" placeholder="Enter blog body"></textarea>
+        <input name="author" type="text" class="feedback-input" id="author" placeholder="Enter author" />
+        <input name="number" type="text" class="feedback-input" id="number" placeholder="Enter number" />
+        <input name="email" type="text" class="feedback-input" id="email" placeholder="Enter email" />
+        <input type="button" value="SUBMIT" onclick="save()"/>
+    </form>
+</body>
+<script type="text/javascript">
+   const save = () => {
+    let blog = document.getElementById('blog').value;
+    let body = document.getElementById('body').value;
+    let author = document.getElementById('author').value;
+    let number = document.getElementById('number').value;
+    let email = document.getElementById('email').value;
+
+    if (!blog || !body || !author || !number || !email) {
+        alert('Fill correct blog title');
+    }
+
+    var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (!email.match(mailformat)) {
+        alert(" Email Id is Not Valid");
+        return false;
+    }
+
+    alert("your data is successfully sent")
+
+   } 
+   
+</script>
+
+</html>
